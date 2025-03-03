@@ -93,7 +93,10 @@
               });
           return JSON.stringify(origin);
         }
-        if (url.includes("api.chzzk.naver.com/service/v2/categories/GAME/")) {
+        if (
+          url.includes("api.chzzk.naver.com/service/v2/categories/GAME/") ||
+          url.includes("api.chzzk.naver.com/service/v1/lives")
+        ) {
           const origin = JSON.parse(actual.response);
           origin.content.data = origin.content.data.filter((content) => {
             if (VTuberChannels.includes(content.channel.channelId))
