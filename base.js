@@ -4,10 +4,12 @@
 // @version      1.0.0
 // @description  try to take over the world!
 // @author       박오인
-// @match        https://chzzk.naver.com/
+// @match        http*://chzzk.naver.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
 // @grant        none
-// @run-at document-start
+// @license		   MIT
+// @run-at       document-start
+// @updateURL	   https://oein.github.io/VTuberBlocker/dist.js
 // ==/UserScript==
 
 (function () {
