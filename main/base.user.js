@@ -119,6 +119,19 @@
           });
           return JSON.stringify(origin);
         }
+        if (
+          url.includes(
+            "api.chzzk.naver.com/service/v1/streamer-partners/recommended"
+          )
+        ) {
+          const origin = JSON.parse(actual.response);
+          origin.content.streamerPartners =
+            origin.content.streamerPartners.filter((content) => {
+              if (VTuberChannels.includes(content.channelId)) return false;
+              return true;
+            });
+          return JSON.stringify(origin);
+        }
         return actual.response;
       },
       set: function (value) {
