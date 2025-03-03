@@ -13,6 +13,10 @@ const tags = fs.readdirSync(path.join(ROOT, "tag")).filter(fileFilter);
 const channels = fs.readdirSync(path.join(ROOT, "channel")).filter(fileFilter);
 const cats = fs.readdirSync(path.join(ROOT, "category")).filter(fileFilter);
 
+console.log(`Tags: ${tags.length}`);
+console.log(`Channels: ${channels.length}`);
+console.log(`Categories: ${cats.length}`);
+
 let tag = tags
   .map((file) => {
     return JSON.parse(fs.readFileSync(path.join(ROOT, "tag", file), "utf8"));
@@ -34,13 +38,18 @@ let cat = cats
   .flat();
 
 // remove duplicates
-tag = tag.filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i);
-channel = channel.filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i);
-cat = cat.filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i);
+tag = [...new Set(tag)];
+channel = [...new Set(channel)];
+cat = [...new Set(cat)];
 
 file = file.replace(`["$0"]`, JSON.stringify(tag));
 file = file.replace(`["$1"]`, JSON.stringify(channel));
 file = file.replace(`["$2"]`, JSON.stringify(cat));
+
+console.log(`Tags: ${tag.length}`);
+console.log(`Channels: ${channel.length}`);
+console.log(`Categories: ${cat.length}`);
+
 const pad2 = (num) => {
   return num.toString().padStart(2, "0");
 };
@@ -51,6 +60,8 @@ const version = `${date.getFullYear()}${pad2(date.getMonth() + 1)}${pad2(
   date.getSeconds()
 )}.${(process.env.GITHUB_SHA || "devenv").slice(0, 6)}`;
 file = file.replace(`$version`, version);
+
+console.log(`Version: ${version}`);
 
 if (!fs.existsSync(path.join(__dirname, "..", "deploy"))) {
   fs.mkdirSync(path.join(__dirname, "..", "deploy"));
