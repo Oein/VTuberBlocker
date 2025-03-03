@@ -13,25 +13,30 @@ const tags = fs.readdirSync(path.join(ROOT, "tag")).filter(fileFilter);
 const channels = fs.readdirSync(path.join(ROOT, "channel")).filter(fileFilter);
 const cats = fs.readdirSync(path.join(ROOT, "category")).filter(fileFilter);
 
-const tag = tags
+let tag = tags
   .map((file) => {
     return JSON.parse(fs.readFileSync(path.join(ROOT, "tag", file), "utf8"));
   })
   .flat();
-const channel = channels
+let channel = channels
   .map((file) => {
     return JSON.parse(
       fs.readFileSync(path.join(ROOT, "channel", file), "utf8")
     );
   })
   .flat();
-const cat = cats
+let cat = cats
   .map((file) => {
     return JSON.parse(
       fs.readFileSync(path.join(ROOT, "category", file), "utf8")
     );
   })
   .flat();
+
+// remove duplicates
+tag = tag.filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i);
+channel = channel.filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i);
+cat = cat.filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i);
 
 file = file.replace(`["$0"]`, JSON.stringify(tag));
 file = file.replace(`["$1"]`, JSON.stringify(channel));
