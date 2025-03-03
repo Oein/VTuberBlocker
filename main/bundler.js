@@ -24,9 +24,13 @@ let tag = tags
   .flat();
 let channel = channels
   .map((file) => {
-    return JSON.parse(
-      fs.readFileSync(path.join(ROOT, "channel", file), "utf8")
-    );
+    return JSON.parse(fs.readFileSync(path.join(ROOT, "channel", file), "utf8"))
+      .map((c) =>
+        c
+          .replace("https://chzzk.naver.com/", "")
+          .replace("http://chzzk.naver.com/", "")
+      )
+      .filter((c) => c.length == 32);
   })
   .flat();
 let cat = cats

@@ -58,14 +58,12 @@
     });
     Object.defineProperty(self, "responseText", {
       get: function () {
-        console.log(actual.responseURL, actual.responseType);
         const url = actual.responseURL;
         if (url.includes("/service/v1.1/home/recommended")) {
           const origin = JSON.parse(actual.response);
           origin.content.recommendedContents =
             origin.content.recommendedContents
               .map((content) => {
-                console.log(content);
                 if (content.lives) {
                   content.lives = content.lives.filter((live) => {
                     for (const tag of VTuberTags) {
