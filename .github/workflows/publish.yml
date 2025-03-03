@@ -18,6 +18,10 @@ jobs:
           # upload entire directory
           path: "./deploy"
   deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
