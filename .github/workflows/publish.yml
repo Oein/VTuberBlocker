@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - name: Build
-        run: bun run ./bundler.js
+        run: bun run ./main/bundler.js
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

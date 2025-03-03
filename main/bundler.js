@@ -51,7 +51,7 @@ const version = `${date.getFullYear()}${pad2(date.getMonth() + 1)}${pad2(
 )}.${(process.env.GITHUB_SHA || "devenv").slice(0, 6)}`;
 file = file.replace(`$version`, version);
 
-if (!fs.existsSync(path.join(__dirname, "deploy"))) {
-  fs.mkdirSync(path.join(__dirname, "deploy"));
+if (!fs.existsSync(path.join(__dirname, "..", "deploy"))) {
+  fs.mkdirSync(path.join(__dirname, "..", "deploy"));
 }
-fs.writeFileSync(path.join(__dirname, "deploy", "dist.user.js"), file);
+fs.writeFileSync(path.join(__dirname, "..", "deploy", "dist.user.js"), file);
