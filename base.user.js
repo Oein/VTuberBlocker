@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vtuber Blocker
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      $version
 // @license		   MIT
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
 // @description  Blocks VTuber content from Chzzk recommendations

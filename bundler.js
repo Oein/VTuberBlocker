@@ -40,6 +40,16 @@ const cat = cats
 file = file.replace(`["$0"]`, JSON.stringify(tag));
 file = file.replace(`["$1"]`, JSON.stringify(channel));
 file = file.replace(`["$2"]`, JSON.stringify(cat));
+const pad2 = (num) => {
+  return num.toString().padStart(2, "0");
+};
+const date = new Date();
+const version = `${date.getFullYear()}${pad2(date.getMonth() + 1)}${pad2(
+  date.getDate()
+)}.${pad2(date.getHours())}${pad2(date.getMinutes())}${pad2(
+  date.getSeconds()
+)}.${(process.env.GITHUB_SHA || "devenv").slice(0, 6)}`;
+file = file.replace(`$version`, version);
 
 if (!fs.existsSync(path.join(__dirname, "deploy"))) {
   fs.mkdirSync(path.join(__dirname, "deploy"));
