@@ -23,3 +23,30 @@
 
 1. 추가하려는 항목에 맞는 폴더에 아무 이름을 가진 json 파일을 생성합니다.
 2. `string[]` 이라는 타입에 맞추어 올바른 json 양식을 지킨 파일을 생성합니다.
+
+아래는 각 항목들의 예시입니다.
+
+### 채널 차단하기
+
+```json
+// channel/my-block-list.json
+[
+  "uxfjwg6np6dyur60vyztu7e7idxtjujg",
+  "fd06aaht45odf1927wts238dq88zj07m",
+  "guvxgiynann798qrkaxyszk6vj9n39dp"
+]
+```
+
+### 태그 차단하기
+
+```json
+// tag/my-block-list.json
+["V튜버", "브이튜버"]
+```
+
+### 카테고리 차단하기
+
+```json
+// channel/my-block-list.json
+["V튜버 몰아보기", "치지직 Vㅓ이제이 특공대"]
+```
