@@ -1,15 +1,14 @@
 // ==UserScript==
-// @name         Vtuber 차단
-// @namespace    https://chzzk.naver.com/
+// @name         Vtuber Blocker
+// @namespace    http://tampermonkey.net/
 // @version      1.0.0
-// @description  try to take over the world!
-// @author       박오인
-// @match        http*://chzzk.naver.com/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
-// @grant        none
 // @license		   MIT
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
+// @description  Blocks VTuber content from Chzzk recommendations
+// @match        http*://chzzk.naver.com/*
+// @updateURL    https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
+// @grant        none
 // @run-at       document-start
-// @updateURL	   https://oein.github.io/VTuberBlocker/dist.js
 // ==/UserScript==
 
 (function () {
