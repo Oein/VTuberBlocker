@@ -95,7 +95,11 @@
         }
         if (
           url.includes("api.chzzk.naver.com/service/v2/categories/GAME/") ||
-          url.includes("api.chzzk.naver.com/service/v1/lives")
+          url.includes("api.chzzk.naver.com/service/v1/lives") ||
+          url.includes("api.chzzk.naver.com/service/v1/watch-party-lives") ||
+          url.includes(
+            "api.chzzk.naver.com/service/v1/follower-high-record-components/lives"
+          )
         ) {
           const origin = JSON.parse(actual.response);
           origin.content.data = origin.content.data.filter((content) => {
