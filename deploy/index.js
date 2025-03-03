@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 유저스크립트 다운로드 URL
   downloadButton.addEventListener("click", () => {
-    const downloadUrl = "https://oein.github.io/VTuberBlocker/dist.user.js";
+    const downloadUrl = "https://vblock.oein.kr/dist.user.js";
     window.open(downloadUrl, "_blank");
   });
 });
