@@ -65,6 +65,11 @@
         const url = actual.responseURL;
         if (url.includes("api.chzzk.naver.com/service/v1.1/home/recommended")) {
           const origin = JSON.parse(actual.response);
+          origin.content.topRecommendedLives =
+            origin.content.topRecommendedLives.filter((live) => {
+              if (VTuberChannels.includes(live.channel.channelId)) return false;
+              return true;
+            });
           origin.content.recommendedContents =
             origin.content.recommendedContents
               .map((content) => {
@@ -85,6 +90,13 @@
                     return true;
                   });
                 }
+                if (content.clips) {
+                  content.clips = content.clips.filter((clip) => {
+                    if (VTuberChannels.includes(clip.ownerChannel.channelId))
+                      return false;
+                    return true;
+                  });
+                }
                 return content;
               })
               .filter((content) => {
@@ -92,6 +104,8 @@
                 if ("videos" in content && content.videos.length === 0)
                   return false;
                 if ("lives" in content && content.lives.length === 0)
+                  return false;
+                if ("clips" in content && content.clips.length === 0)
                   return false;
                 return true;
               });
