@@ -1,14 +1,18 @@
 // ==UserScript==
 // @name         Vtuber Blocker
-// @namespace    http://tampermonkey.net/
+// @namespace    https://oein.github.io/VTuberBlocker/
+// @homepageURL  https://oein.github.io/VTuberBlocker/
+// @supportURL   https://oein.github.io/VTuberBlocker/issues
 // @version      $version
 // @license		   MIT
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
 // @description  Blocks VTuber content from Chzzk recommendations
 // @match        http*://chzzk.naver.com/*
 // @updateURL    https://oein.github.io/VTuberBlocker/dist.user.js
+// @downloadURL  https://oein.github.io/VTuberBlocker/dist.user.js
 // @grant        none
 // @run-at       document-start
+// @copyright    Copyright (c) 2025 Oein
 // ==/UserScript==
 
 (function () {
