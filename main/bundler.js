@@ -7,12 +7,14 @@ const fileFilter = (file) => {
   return file.endsWith(".json");
 };
 
-const tags = fs.readdirSync(path.join(__dirname, "tag")).filter(fileFilter);
+const tags = fs
+  .readdirSync(path.join(__dirname, "..", "tag"))
+  .filter(fileFilter);
 const channels = fs
-  .readdirSync(path.join(__dirname, "channel"))
+  .readdirSync(path.join(__dirname, "..", "channel"))
   .filter(fileFilter);
 const cats = fs
-  .readdirSync(path.join(__dirname, "category"))
+  .readdirSync(path.join(__dirname, "..", "category"))
   .filter(fileFilter);
 
 const tag = tags
