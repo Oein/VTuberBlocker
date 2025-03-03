@@ -216,10 +216,4 @@
         location.reload();
       }
     }, 10);
-  else
-    setInterval(() => {
-      if (!location.href.includes("chzzk.naver.com/live/")) {
-        location.reload();
-      }
-    }, 10);
 })();
