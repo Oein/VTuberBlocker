@@ -4,7 +4,7 @@
 // @homepageURL  https://vblock.oein.kr/
 // @supportURL   https://github.com/Oein/VTuberBlocker/issues
 // @version      $version
-// @license		   MIT
+// @license      MIT
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
 // @description  Blocks VTuber content from Chzzk recommendations
 // @match        http*://chzzk.naver.com/*
