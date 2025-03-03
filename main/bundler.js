@@ -46,8 +46,14 @@ tag = [...new Set(tag)];
 channel = [...new Set(channel)];
 cat = [...new Set(cat)];
 
+// each channel id is hex string of 32 characters
+// compress it to base64
+channel = channel.map((c) => {
+  return Buffer.from(c, "hex").toString("base64").replace("==", "");
+});
+
 file = file.replace(`["$0"]`, JSON.stringify(tag));
-file = file.replace(`["$1"]`, JSON.stringify(channel));
+file = file.replace(`$1`, channel.join("@"));
 file = file.replace(`["$2"]`, JSON.stringify(cat));
 
 console.log(`Tags: ${tag.length}`);

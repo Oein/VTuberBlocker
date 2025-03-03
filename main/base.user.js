@@ -18,7 +18,11 @@
 (function () {
   // index.ts
   var VTuberTags = ["$0"];
-  var VTuberChannels = ["$1"];
+  var VTuberChannels = "$1".split("@").map((c) => {
+    return Array.from(atob(c + "=="), (char) =>
+      char.charCodeAt(0).toString(16).padStart(2, "0")
+    ).join("");
+  });
   var VTuberCats = ["$2"];
 
   var oldXMLHttpRequest = XMLHttpRequest;
