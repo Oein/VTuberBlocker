@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-let file = fs.readFileSync(path.join(__dirname, "base.js"), "utf8");
+let file = fs.readFileSync(path.join(__dirname, "base.user.js"), "utf8");
 
 const fileFilter = (file) => {
   return file.endsWith(".json");
@@ -44,4 +44,4 @@ file = file.replace(`["$2"]`, JSON.stringify(cat));
 if (!fs.existsSync(path.join(__dirname, "deploy"))) {
   fs.mkdirSync(path.join(__dirname, "deploy"));
 }
-fs.writeFileSync(path.join(__dirname, "deploy", "dist.js"), file);
+fs.writeFileSync(path.join(__dirname, "deploy", "dist.user.js"), file);

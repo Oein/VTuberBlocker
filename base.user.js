@@ -6,7 +6,7 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
 // @description  Blocks VTuber content from Chzzk recommendations
 // @match        http*://chzzk.naver.com/*
-// @updateURL    https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
+// @updateURL    https://oein.github.io/VTuberBlocker/dist.user.js
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
