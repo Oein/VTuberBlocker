@@ -100,7 +100,9 @@
           url.includes("api.chzzk.naver.com/service/v1/watch-party-lives") ||
           url.includes(
             "api.chzzk.naver.com/service/v1/follower-high-record-components/lives"
-          )
+          ) ||
+          (url.includes("api.chzzk.naver.com/service/v1/manual-components/") &&
+            url.includes("/lives"))
         ) {
           const origin = JSON.parse(actual.response);
           origin.content.data = origin.content.data.filter((content) => {
