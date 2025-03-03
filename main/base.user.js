@@ -95,6 +95,7 @@
         }
         if (
           url.includes("api.chzzk.naver.com/service/v2/categories/GAME/") ||
+          url.includes("api.chzzk.naver.com/service/v2/categories/ETC/") ||
           url.includes("api.chzzk.naver.com/service/v1/lives") ||
           url.includes("api.chzzk.naver.com/service/v1/watch-party-lives") ||
           url.includes(
