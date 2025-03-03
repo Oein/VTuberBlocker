@@ -7,34 +7,28 @@ const fileFilter = (file) => {
   return file.endsWith(".json");
 };
 
-const tags = fs
-  .readdirSync(path.join(__dirname, "..", "tag"))
-  .filter(fileFilter);
-const channels = fs
-  .readdirSync(path.join(__dirname, "..", "channel"))
-  .filter(fileFilter);
-const cats = fs
-  .readdirSync(path.join(__dirname, "..", "category"))
-  .filter(fileFilter);
+const ROOT = path.join(__dirname, "..");
+
+const tags = fs.readdirSync(path.join(ROOT, "tag")).filter(fileFilter);
+const channels = fs.readdirSync(path.join(ROOT, "channel")).filter(fileFilter);
+const cats = fs.readdirSync(path.join(ROOT, "category")).filter(fileFilter);
 
 const tag = tags
   .map((file) => {
-    return JSON.parse(
-      fs.readFileSync(path.join(__dirname, "tag", file), "utf8")
-    );
+    return JSON.parse(fs.readFileSync(path.join(ROOT, "tag", file), "utf8"));
   })
   .flat();
 const channel = channels
   .map((file) => {
     return JSON.parse(
-      fs.readFileSync(path.join(__dirname, "channel", file), "utf8")
+      fs.readFileSync(path.join(ROOT, "channel", file), "utf8")
     );
   })
   .flat();
 const cat = cats
   .map((file) => {
     return JSON.parse(
-      fs.readFileSync(path.join(__dirname, "category", file), "utf8")
+      fs.readFileSync(path.join(ROOT, "category", file), "utf8")
     );
   })
   .flat();
