@@ -110,6 +110,7 @@
             }
             return true;
           });
+          return JSON.stringify(origin);
         }
         return actual.response;
       },
