@@ -416,7 +416,7 @@
 
     const sContainer = document.querySelector(`[class*=search_container]`);
     if (sContainer) {
-      sContainer.style.left = "calc(63px + 80px)";
+      sContainer.style.left = "min(50%,250px)";
       sContainer.style.transform = "translateX(0px)";
     }
   }, 1000);
