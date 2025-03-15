@@ -1,2 +1,2 @@
 **/.DS_Store
-deploy/dist.user.js
+deploy/dist*.user.js

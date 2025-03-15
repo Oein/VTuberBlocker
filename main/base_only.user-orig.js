@@ -195,7 +195,7 @@
       header.style.marginBottom = "20px";
 
       const title = document.createElement("h2");
-      title.textContent = "VTuber Blocker Settings";
+      title.textContent = "VTuber Only Settings";
       title.style.margin = "0";
       title.style.fontSize = "18px";
 
@@ -250,25 +250,25 @@
 
       editorEl.appendChild(
         createSection(
-          "Blocked Tags (one per line)",
+          "Allowed Tags (one per line)",
           "vbtag",
-          "Enter tags to block, one per line"
+          "Enter tags to allow, one per line"
         )
       );
 
       editorEl.appendChild(
         createSection(
-          "Blocked Channel IDs (one per line)",
+          "Allowed Channel IDs (one per line)",
           "vbchannel",
-          "Enter channel IDs or channel URLs to block, one per line"
+          "Enter channel IDs or channel URLs to allow, one per line"
         )
       );
 
       editorEl.appendChild(
         createSection(
-          "Blocked Categories (one per line)",
+          "Allowed Categories (one per line)",
           "vbcat",
-          "Enter categories to block, one per line"
+          "Enter categories to allow, one per line"
         )
       );
 
@@ -401,7 +401,7 @@
   span.style.display = "none";
   span.style.padding = "5px 9px";
   span.style.transform = "translateX(-50%)";
-  span.innerText = "VTuber Blocker";
+  span.innerText = "VTuber Only";
   editorOpenButton.appendChild(span);
 
   editorOpenButton.onmouseover = () => {
