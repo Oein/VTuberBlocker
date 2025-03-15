@@ -5,9 +5,13 @@
 // @supportURL   https://github.com/Oein/VTuberBlocker/issues
 // @version      $version
 // @license      MIT
+// @author       Oein
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=chzzk.naver.com
 // @description  Blocks VTuber content from Chzzk recommendations
-// @match        http*://chzzk.naver.com/*
+// @match        https://chzzk.naver.com/*
+// @match        https://chzzk.naver.com/
+// @match        http://chzzk.naver.com/*
+// @match        http://chzzk.naver.com/
 // @updateURL    https://vblock.oein.kr/dist.user.js
 // @downloadURL  https://vblock.oein.kr/dist.user.js
 // @grant        none
