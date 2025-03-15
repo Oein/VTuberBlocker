@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-let file = fs.readFileSync(path.join(__dirname, "base.user.js"), "utf8");
+let file = fs.readFileSync(path.join(__dirname, "base_only.user.js"), "utf8");
 
 const fileFilter = (file) => {
   return file.endsWith(".json");
@@ -68,7 +68,7 @@ const version = `${date.getFullYear()}${pad2(date.getMonth() + 1)}${pad2(
   date.getDate()
 )}.${pad2(date.getHours())}${pad2(date.getMinutes())}${pad2(
   date.getSeconds()
-)}.B${(process.env.GITHUB_SHA || "devenv").slice(0, 6)}`;
+)}.O${(process.env.GITHUB_SHA || "devenv").slice(0, 6)}`;
 file = file.replace(`$version`, version);
 
 console.log(`Version: ${version}`);
@@ -76,4 +76,7 @@ console.log(`Version: ${version}`);
 if (!fs.existsSync(path.join(__dirname, "..", "deploy"))) {
   fs.mkdirSync(path.join(__dirname, "..", "deploy"));
 }
-fs.writeFileSync(path.join(__dirname, "..", "deploy", "dist.user.js"), file);
+fs.writeFileSync(
+  path.join(__dirname, "..", "deploy", "dist-only.user.js"),
+  file
+);
